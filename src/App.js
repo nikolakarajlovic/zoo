@@ -2,24 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
+  
+  const niz_zivotinje = [
+    {vrsta: 'rakun', ime: 'Lopov', datum_rodjenja: new Date()},
+    {vrsta: 'lav', ime: 'Simba', datum_rodjenja: new Date()},
+    {vrsta: 'zec', ime: 'Dusko', datum_rodjenja: new Date()},
+    {vrsta: 'medved', ime: 'Balu', datum_rodjenja: new Date()},
+    {vrsta: 'koala', ime: 'Blinki Bil', datum_rodjenja: new Date()}]
+  
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Zivotinje:</h1>
+      <ul>
+        {niz_zivotinje.map((zivotinja) => (
+          <li key={zivotinja.indexOf}>{zivotinja.vrsta}, {zivotinja.ime}, {zivotinja.datum_rodjenja.toLocaleDateString()}</li>
+        ))}
+      </ul>
     </div>
   );
 }
+
 
 export default App;
