@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   
-  const niz_zivotinje = [
+  const zivotinje = [
     {vrsta: 'rakun', ime: 'Lopov', datum_rodjenja: new Date()},
     {vrsta: 'lav', ime: 'Simba', datum_rodjenja: new Date()},
     {vrsta: 'zec', ime: 'Dusko', datum_rodjenja: new Date()},
@@ -13,14 +13,24 @@ function App() {
     return (
     <div className="App">
       <h1>Zivotinje:</h1>
-      <ul>
-        {niz_zivotinje.map((zivotinja) => (
-          <li key={zivotinja.indexOf}>{zivotinja.vrsta}, {zivotinja.ime}, {zivotinja.datum_rodjenja.toLocaleDateString()}</li>
-        ))}
-      </ul>
+      <table>
+      <tr>
+        <th>Vrsta</th>
+        <th>Ime</th>
+        <th>Datum rodjenja</th>
+      </tr>
+      {zivotinje.map((zivotinja) => (
+      <tr key={zivotinja.indexOf}>
+          <td >{zivotinja.vrsta}</td>
+          <td>{zivotinja.ime}</td>
+          <td>{zivotinja.datum_rodjenja.toLocaleDateString()}</td>
+      </tr>))}
+      </table>
     </div>
   );
 }
+
+
 
 
 export default App;
